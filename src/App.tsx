@@ -2,12 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import { TestView } from "./components/test-view/TestView";
+import { TestViewAuth } from "./components/test-view-auth/TestViewAuth";
+import { withAdditionalState } from "./app/hocs/withAdditionalState";
 
 function App() {
+  const WrappedTestView = withAdditionalState<any>(TestView);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        <TestViewAuth />
+        <WrappedTestView />
         <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
