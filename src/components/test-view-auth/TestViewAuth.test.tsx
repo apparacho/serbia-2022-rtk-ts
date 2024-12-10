@@ -1,20 +1,25 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../redux/store';
 import { TestViewAuth } from './TestViewAuth';
 
 test('renders learn react link', async () => {
-    const { getByText, debug, container, findByTestId } = render(
+    // @testing-library/react
+    const { container } = render(
         <Provider store={store}>
             <TestViewAuth />
         </Provider>
     );
 
-    // debug();
-    // const loginBtn = container.querySelector('.test-view-auth__login-btn');
+    // screen.debug();
+    // eslint-disable-next-line testing-library/no-container,testing-library/no-node-access
+    const loginBtnNative = container.querySelector('.test-view-auth__login-btn');
+    expect(loginBtnNative).toBeInTheDocument()
+
     // eslint-disable-next-line testing-library/prefer-screen-queries
-    const loginBtn = getByText(/Login/i);
+
+    const loginBtn = screen.getByText(/Login/i);
     // eslint-disable-next-line testing-library/no-container,testing-library/no-node-access
     const content = document.querySelector('.test-view-auth__content');
     console.log(loginBtn.textContent);
