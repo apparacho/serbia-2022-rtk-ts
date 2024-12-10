@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from "../app/store";
+import { RootState } from "./store";
 import { setToken, removeToken } from '../utils/authToken'
 
 const sliceName = 'auth';

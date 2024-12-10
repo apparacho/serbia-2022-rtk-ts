@@ -1,5 +1,5 @@
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { selectIsAuthorized, logout, loginAsync } from '../../redux/auth';
+import { useAppSelector, useAppDispatch } from './index';
+import { selectIsAuthorized, logout, loginAsync } from '../redux/auth';
 
 export const useAuth = () => {
     const isAuthorized = useAppSelector(selectIsAuthorized);
