@@ -21,7 +21,7 @@ export const OrmcoMainComponent = () => {
     return (
         <div className="ormco-main-container">
             <div>
-                <a target="_blank" href="https://disk.yandex.ru/i/waUOOQNWxVBtsA">
+                <a target="_blank" rel="noreferrer" href="https://disk.yandex.ru/i/waUOOQNWxVBtsA">
                     Условие задачиcdwcvwdcwd
                 </a>
             </div>
